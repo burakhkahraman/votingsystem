@@ -1,27 +1,27 @@
 package com.heroes.votingsystem.model;
 
+import com.heroes.votingsystem.dto.PollRequestDTO;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "poll")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Poll {
+public class Poll extends PollRequestDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
     private String question;
+
+    private String title;
+    private String description;
 
     @Column(name = "start_date", nullable = false)
     private LocalDateTime startDate;

@@ -1,15 +1,11 @@
 package com.heroes.votingsystem.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
-@Table(name = "options")
-@Getter
-@Setter
+@Table(name = "option")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Option {
